@@ -6,10 +6,7 @@
     <!-- Filter the Title   -->
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-2">Filter by:</div>
-            <div class="col-md-4">
-                <input type="text" [(ngModel)]="listFilter" />
-            </div>
+            <mh-moviefilter (changed) = "onChanged($event)"></mh-moviefilter>
         </div>
 
         <div class="row" [hidden]="!listFilter">
