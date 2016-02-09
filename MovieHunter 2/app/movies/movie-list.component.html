@@ -5,17 +5,8 @@
 
     <!-- Filter the Title   -->
     <div class="panel-body">
-        <div class="row">
-            <div class="col-md-2">Filter by:</div>
-            <div class="col-md-4">
-                <input type="text" [(ngModel)]="listFilter" />
-            </div>
-        </div>
-
-        <div class="row" [hidden]="!listFilter">
-            <h3>Movies filtered by: {{listFilter}}</h3>
-        </div>
-
+        <mh-filter-entry (changed)="onChanged($event)"></mh-filter-entry>
+        
         <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
 
         <div class="table-responsive">
@@ -48,7 +39,7 @@
                         <td>{{ convertToDate(movie.releaseDate) | date}}</td>
                         <td>{{ movie.mpaa | uppercase}}</td>
                         <td>{{ movie.price | currency:'USD':true:'1.2'}}</td>
-                        <td>{{ movie.starRating | number }} </td>
+                        <td><star [rating]="movie.starRating"></star></td>
                         <td>{{ movie.approvalRating | percent: '1.0-0'}}</td>
                     </tr>
                 </tbody>

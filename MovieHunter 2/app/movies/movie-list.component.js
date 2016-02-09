@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./movie.service", './movieFilter.pipe'], function(exports_1) {
+System.register(['angular2/core', '../shared/filter-entry.component', "../shared/star.component", "./movie.service", './movieFilter.pipe'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,12 +8,18 @@ System.register(['angular2/core', "./movie.service", './movieFilter.pipe'], func
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, movie_service_1, movieFilter_pipe_1;
+    var core_1, filter_entry_component_1, star_component_1, movie_service_1, movieFilter_pipe_1;
     var MovieListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (filter_entry_component_1_1) {
+                filter_entry_component_1 = filter_entry_component_1_1;
+            },
+            function (star_component_1_1) {
+                star_component_1 = star_component_1_1;
             },
             function (movie_service_1_1) {
                 movie_service_1 = movie_service_1_1;
@@ -36,6 +42,9 @@ System.register(['angular2/core', "./movie.service", './movieFilter.pipe'], func
                 MovieListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
                 };
+                MovieListComponent.prototype.onChanged = function (filter) {
+                    this.listFilter = filter;
+                };
                 MovieListComponent.prototype.convertToDate = function (dateString) {
                     return new Date(dateString);
                 };
@@ -44,6 +53,8 @@ System.register(['angular2/core', "./movie.service", './movieFilter.pipe'], func
                         selector: 'mh-movies',
                         templateUrl: 'app/movies/movie-list.component.html',
                         styleUrls: ['app/movies/movie-list.component.css'],
+                        directives: [filter_entry_component_1.FilterEntryComponent,
+                            star_component_1.StarComponent],
                         providers: [movie_service_1.MovieService],
                         pipes: [movieFilter_pipe_1.MovieFilterPipe]
                     }), 
