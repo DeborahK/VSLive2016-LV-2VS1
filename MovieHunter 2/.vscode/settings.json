@@ -3,4 +3,8 @@
          "files.exclude": {
         "**/*.js": true
 	}  
+    
+    // Controls the font size.
+	"editor.fontSize": 20,
+
 }
