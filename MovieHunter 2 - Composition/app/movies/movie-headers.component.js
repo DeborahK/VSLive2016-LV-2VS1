@@ -32,7 +32,8 @@ System.register(['angular2/core'], function(exports_1) {
                 MovieHeadersComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-movieheaders',
-                        template: "\n        <thead>\n            <tr>\n                <td>\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"onClick()\">\n                        {{showImage ? \"Hide\" : \"Show\"}} Poster\n                    </button>\n                </td>\n                <td>Title</td>\n                <td>Director</td>\n                <td>Release Date</td>\n                <td>MPAA Rating</td>\n                <td>DVD Price</td>\n                <td>5 Star Rating</td>\n                <td>Audience Approval</td>\n            </tr>\n        </thead>\n     "
+                        template: "\n        <tr>\n            <td>\n                <button type=\"button\" class=\"btn btn-info\" (click)=\"onClick()\">\n                    {{showImage ? \"Hide\" : \"Show\"}} Poster\n                </button>\n            </td>\n            <td>Title</td>\n            <td>Director</td>\n            <td>Release Date</td>\n            <td>MPAA Rating</td>\n            <td>DVD Price</td>\n            <td>5 Star Rating</td>\n            <td>Audience Approval</td>\n        </tr>\n     ",
+                        styleUrls: ['app/movies/movie-headers.component.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MovieHeadersComponent);

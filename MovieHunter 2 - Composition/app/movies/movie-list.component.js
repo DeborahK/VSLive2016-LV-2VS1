@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./movie.service", './movieFilter.pipe', './movie-filter.component', './movie-headers.component'], function(exports_1) {
+System.register(['angular2/core', "./movie.service", './movieFilter.pipe', './movie-filter.component', './movie-headers.component', './movie-row.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', "./movie.service", './movieFilter.pipe', './mo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, movie_service_1, movieFilter_pipe_1, movie_filter_component_1, movie_headers_component_1;
+    var core_1, movie_service_1, movieFilter_pipe_1, movie_filter_component_1, movie_headers_component_1, movie_row_component_1;
     var MovieListComponent;
     return {
         setters:[
@@ -26,6 +26,9 @@ System.register(['angular2/core', "./movie.service", './movieFilter.pipe', './mo
             },
             function (movie_headers_component_1_1) {
                 movie_headers_component_1 = movie_headers_component_1_1;
+            },
+            function (movie_row_component_1_1) {
+                movie_row_component_1 = movie_row_component_1_1;
             }],
         execute: function() {
             MovieListComponent = (function () {
@@ -45,17 +48,15 @@ System.register(['angular2/core', "./movie.service", './movieFilter.pipe', './mo
                 MovieListComponent.prototype.onToggleImage = function (toggleImage) {
                     this.showImage = toggleImage;
                 };
-                MovieListComponent.prototype.convertToDate = function (dateString) {
-                    return new Date(dateString);
-                };
                 MovieListComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-movies',
                         templateUrl: 'app/movies/movie-list.component.html',
-                        styleUrls: ['app/movies/movie-list.component.css'],
                         providers: [movie_service_1.MovieService],
                         pipes: [movieFilter_pipe_1.MovieFilterPipe],
-                        directives: [movie_filter_component_1.MovieFilterComponent, movie_headers_component_1.MovieHeadersComponent]
+                        directives: [movie_filter_component_1.MovieFilterComponent,
+                            movie_headers_component_1.MovieHeadersComponent,
+                            movie_row_component_1.MovieRowComponent]
                     }), 
                     __metadata('design:paramtypes', [movie_service_1.MovieService])
                 ], MovieListComponent);

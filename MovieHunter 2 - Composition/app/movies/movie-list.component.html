@@ -5,27 +5,16 @@
 
     <!-- Filter the Title   -->
     <div class="panel-body">
-       <mh-moviefilter (changed) = "onChanged($event)"></mh-moviefilter>
+        <mh-moviefilter (changed)="onChanged($event)"></mh-moviefilter>
 
-       <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+        <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
 
         <div class="table-responsive">
             <table class="table" *ngIf="movies && movies.length">
-                <mh-movieheaders (toggleImage) = "onToggleImage($event)"></mh-movieheaders>
+                <mh-movieheaders (toggleImage)="onToggleImage($event)"></mh-movieheaders>
                 <tbody>
                     <tr *ngFor="#movie of movies | movieFilter:listFilter">
-                        <td>
-                            <img [hidden]="!showImage || !movie.imageurl" style="width:50px;margin:2px" 
-                                 [src]="movie.imageurl"
-                                 [title]="movie.title">
-                        </td>
-                        <td>{{ movie.title }}</td>
-                        <td>{{ movie.director }}</td>
-                        <td>{{ convertToDate(movie.releaseDate) | date}}</td>
-                        <td>{{ movie.mpaa | uppercase}}</td>
-                        <td>{{ movie.price | currency:'USD':true:'1.2'}}</td>
-                        <td>{{ movie.starRating | number }} </td>
-                        <td>{{ movie.approvalRating | percent: '1.0-0'}}</td>
+                        <mh-movierow [showImage]="showImage" [movie]="movie"></mh-movierow>
                     </tr>
                 </tbody>
             </table>

@@ -5,14 +5,16 @@ import {MovieService} from "./movie.service"
 import {MovieFilterPipe} from './movieFilter.pipe';
 import {MovieFilterComponent} from './movie-filter.component';
 import {MovieHeadersComponent} from './movie-headers.component';
+import {MovieRowComponent} from './movie-row.component';
 
 @Component({
     selector: 'mh-movies',
     templateUrl: 'app/movies/movie-list.component.html',
-    styleUrls: ['app/movies/movie-list.component.css'],
     providers: [MovieService],
     pipes: [MovieFilterPipe],
-    directives: [MovieFilterComponent, MovieHeadersComponent]
+    directives: [MovieFilterComponent, 
+                MovieHeadersComponent,
+                MovieRowComponent]
 })
 export class MovieListComponent implements OnInit {
     pageTitle: string = "Movie List";
@@ -36,9 +38,5 @@ export class MovieListComponent implements OnInit {
     
     onToggleImage(toggleImage) {
         this.showImage = toggleImage;
-    }
-
-    convertToDate(dateString): Date {
-        return new Date(dateString);
     }
 }
