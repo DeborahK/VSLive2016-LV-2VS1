@@ -31,7 +31,7 @@ System.register(['angular2/core'], function(exports_1) {
                 MovieFilterComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-moviefilter',
-                        template: "\n      <div class=\"col-md-2\">Filter by:</div>\n      <div class=\"col-md-4\">\n        <input type=\"text\" [(ngModel)]=\"movieFilter\" (keyup)=\"onKeyUp()\" />\n      </div>\n    "
+                        template: "\n      <div class=\"row\">\n        <div class=\"col-md-2\">Filter by:</div>\n        <div class=\"col-md-4\">\n            <input type=\"text\" [(ngModel)]=\"movieFilter\" (keyup)=\"onKeyUp()\" />\n        </div>\n      </div>\n      <div class=\"row\" [hidden]=\"!movieFilter\">\n        <div class=\"col-md-6\">\n            <h3>Movies filtered by: {{movieFilter}}</h3>\n        </div>\n      </div>\n      <br/>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MovieFilterComponent);
