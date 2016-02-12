@@ -19,12 +19,12 @@ import {Component, Output, EventEmitter}  from 'angular2/core';
 })
 export class FilterEntryComponent {
     filterText: string = "";
-    @Output() changed : EventEmitter<string> = new EventEmitter<string>();
+    @Output() filterChanged : EventEmitter<string> = new EventEmitter<string>();
 
     constructor() {
     }
     
     onChanged() {
-        this.changed.emit(this.filterText);
+        this.filterChanged.emit(this.filterText);
     }
 }

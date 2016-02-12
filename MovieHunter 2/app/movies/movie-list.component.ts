@@ -4,7 +4,7 @@ import {FilterEntryComponent} from '../shared/filter-entry.component';
 import {StarComponent} from "../shared/star.component";
 
 import {IMovie} from './movie';
-import {MovieService} from "./movie.service";
+import {MovieService} from './movie.service';
 import {MovieFilterPipe} from './movieFilter.pipe';
 
 @Component({
@@ -36,7 +36,7 @@ export class MovieListComponent implements OnInit {
         this.showImage = !this.showImage;
     }
     
-    onChanged(filter) {
+    onFilterChanged(filter) {
         this.listFilter = filter;
     }
     

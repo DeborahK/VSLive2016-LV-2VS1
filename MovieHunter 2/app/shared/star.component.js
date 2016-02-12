@@ -22,7 +22,7 @@ System.register(['angular2/core'], function(exports_1) {
                 StarComponent.prototype.ngOnChanges = function () {
                     // Convert x out of 5 starts
                     // to y out of 86px width
-                    this.starPercent = (this.rating * 86 / 5) + "px";
+                    this.starWidth = (this.rating * 86 / 5) + "px";
                 };
                 __decorate([
                     core_1.Input(), 

@@ -19,15 +19,15 @@ System.register(['angular2/core'], function(exports_1) {
             FilterEntryComponent = (function () {
                 function FilterEntryComponent() {
                     this.filterText = "";
-                    this.changed = new core_1.EventEmitter();
+                    this.filterChanged = new core_1.EventEmitter();
                 }
                 FilterEntryComponent.prototype.onChanged = function () {
-                    this.changed.emit(this.filterText);
+                    this.filterChanged.emit(this.filterText);
                 };
                 __decorate([
                     core_1.Output(), 
                     __metadata('design:type', core_1.EventEmitter)
-                ], FilterEntryComponent.prototype, "changed", void 0);
+                ], FilterEntryComponent.prototype, "filterChanged", void 0);
                 FilterEntryComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-filter-entry',
