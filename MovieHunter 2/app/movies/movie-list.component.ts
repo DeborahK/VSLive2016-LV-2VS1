@@ -36,11 +36,11 @@ export class MovieListComponent implements OnInit {
         this.showImage = !this.showImage;
     }
     
-    onFilterChanged(filter) {
+    onFilterChanged(filter: string) {
         this.listFilter = filter;
     }
     
-    convertToDate(dateString): Date {
+    convertToDate(dateString: string): Date {
         return new Date(dateString);
     }
 }
