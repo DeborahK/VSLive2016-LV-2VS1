@@ -1,7 +1,7 @@
 import {Component, Output, EventEmitter}  from 'angular2/core';
 
 @Component({
-    selector: 'mh-filter-entry',
+    selector: 'is-filter-entry',
     template: `
       <div class="row">
         <div class="col-md-2">Filter by:</div>
@@ -21,9 +21,6 @@ export class FilterEntryComponent {
     filterText: string = "";
     @Output() filterChanged : EventEmitter<string> = new EventEmitter<string>();
 
-    constructor() {
-    }
-    
     onChanged() {
         this.filterChanged.emit(this.filterText);
     }

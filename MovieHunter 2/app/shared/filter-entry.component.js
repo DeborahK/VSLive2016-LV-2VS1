@@ -32,7 +32,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 ], FilterEntryComponent.prototype, "filterChanged", void 0);
                 FilterEntryComponent = __decorate([
                     core_1.Component({
-                        selector: 'mh-filter-entry',
+                        selector: 'is-filter-entry',
                         template: "\n      <div class=\"row\">\n        <div class=\"col-md-2\">Filter by:</div>\n        <div class=\"col-md-4\">\n            <input type=\"text\" [(ngModel)]=\"filterText\" (keyup)=\"onChanged()\" (input)=\"onChanged()\"/>\n        </div>\n      </div>\n      <div class=\"row\" [hidden]=\"!filterText\">\n        <div class=\"col-md-6\">\n            <h3>Movies filtered by: {{filterText}}</h3>\n        </div>\n      </div>\n      <br/>\n    "
                     }), 
                     __metadata('design:paramtypes', [])

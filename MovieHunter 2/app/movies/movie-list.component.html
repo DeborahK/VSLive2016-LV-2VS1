@@ -5,7 +5,7 @@
 
     <!-- Filter the Title   -->
     <div class="panel-body">
-        <mh-filter-entry (filterChanged)="onFilterChanged($event)"></mh-filter-entry>
+        <is-filter-entry (filterChanged)="onFilterChanged($event)"></is-filter-entry>
         
         <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
 
@@ -14,7 +14,8 @@
                 <thead>
                     <tr>
                         <td>
-                            <button type="button" class="btn btn-info" (click)="toggleImage()">
+                            <button type="button" class="btn btn-info" 
+                                 (click)="toggleImage()">
                                 {{showImage ? "Hide" : "Show"}} Poster
                             </button>
                         </td>
@@ -41,7 +42,7 @@
                         <td>{{ convertToDate(movie.releaseDate) | date}}</td>
                         <td>{{ movie.mpaa | uppercase}}</td>
                         <td>{{ movie.price | currency:'USD':true:'1.2'}}</td>
-                        <td><star [rating]="movie.starRating"></star></td>
+                        <td><is-star [rating]="movie.starRating"></is-star></td>
                         <td>{{ movie.approvalRating | percent: '1.0-0'}}</td>
                     </tr>
                 </tbody>

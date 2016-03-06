@@ -3,7 +3,6 @@ import {IMovie}         from './movie';
 
 @Injectable()
 export class MovieService {
-    constructor() { }
 
     getMovies() : IMovie[] {
         return [
